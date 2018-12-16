@@ -36,6 +36,11 @@ void Weapon_GrenadeLauncher (edict_t *ent);
 void Weapon_Railgun (edict_t *ent);
 void Weapon_BFG (edict_t *ent);
 
+//::Pridkett
+void Weapon_Sword(edict_t *ent);
+//!Pridkett
+
+
 gitem_armor_t jacketarmor_info	= { 25,  50, .30, .00, ARMOR_JACKET};
 gitem_armor_t combatarmor_info	= { 50, 100, .60, .30, ARMOR_COMBAT};
 gitem_armor_t bodyarmor_info	= {100, 200, .80, .60, ARMOR_BODY};
@@ -1542,6 +1547,34 @@ always owned, never in the world
 	//
 	// AMMO ITEMS
 	//
+
+	//::Pridkett
+	/* weapon_sword
+	always owned, never in the world
+	*/
+	{
+		"weapon_sword",
+		NULL,
+		Use_Weapon,                             //How to use
+		NULL,
+		Weapon_Sword,                           //What the function is
+		"misc/w_pkup.wav",
+		NULL,
+		0,
+		"models/weapons/v_blast/tris.md2",      //The models stuff
+		"w_blaster",                                    //Icon to be used
+		"Sword",                                        //Pickup name
+		0,
+		0,
+		NULL,
+		IT_WEAPON,
+		NULL,
+		0,
+		"weapons/blastf1a.wav misc/lasfly.wav" //The sound of the blaster
+		//This is precached
+	},
+
+	//!Pridkett
 
 /*QUAKED ammo_shells (.3 .3 1) (-16 -16 -16) (16 16 16)
 */

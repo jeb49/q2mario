@@ -418,6 +418,21 @@ void Cmd_Use_f (edict_t *ent)
 		return;
 	}
 
+	//added 1-13-98 by Dan Eisner
+	//to allow multiple weapons from one keypress
+
+	else if (!Q_stricmp(s, ent->client->pers.weapon->pickup_name))
+	{
+		if (!Q_stricmp(s, "Blaster"))    {
+			it = FindItem("Sword");
+
+		}
+		else if (!Q_stricmp(s, "Shotgun"))    {
+			it = FindItem("SuperShotgun");
+		}
+
+	}
+	//end added portion
 	it->use (ent, it);
 }
 
