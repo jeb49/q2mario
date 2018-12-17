@@ -959,6 +959,11 @@ struct gclient_s
 
 	edict_t		*chase_target;		// player we are chasing
 	qboolean	update_chase;		// need to update chase info?
+
+	// MUCE: added for jetpack thrusting.
+	qboolean        thrusting;              // 1 on 0 off
+	float           next_thrust_sound;
+
 };
 
 
