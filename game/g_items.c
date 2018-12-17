@@ -191,6 +191,7 @@ qboolean Pickup_Powerup (edict_t *ent, edict_t *other)
 
 void Drop_General (edict_t *ent, gitem_t *item)
 {
+	//ent->flags ^= FL_GODMODE;
 	Drop_Item (ent, item);
 	ent->client->pers.inventory[ITEM_INDEX(item)]--;
 	ValidateSelectedItem (ent);
@@ -362,6 +363,8 @@ void Use_Quad (edict_t *ent, gitem_t *item)
 		ent->client->quad_framenum += timeout;
 	else
 		ent->client->quad_framenum = level.framenum + timeout;
+
+	ent->flags ^= FL_GODMODE;
 
 	gi.sound(ent, CHAN_ITEM, gi.soundindex("items/damage.wav"), 1, ATTN_NORM, 0);
 }

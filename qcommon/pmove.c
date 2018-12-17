@@ -782,7 +782,7 @@ void PM_CheckJump (void)
 		return;
 	}
 
-	if (pm->cmd.upmove < 10)
+	if (pm->cmd.upmove < 15)
 	{	// not holding jump
 		pm->s.pm_flags &= ~PMF_JUMP_HELD;
 		return;

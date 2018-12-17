@@ -40,17 +40,17 @@ static int	sound_sight;
 
 void gunner_idlesound (edict_t *self)
 {
-	gi.sound (self, CHAN_VOICE, sound_idle, 1, ATTN_IDLE, 0);
+	//gi.sound (self, CHAN_VOICE, sound_idle, 1, ATTN_IDLE, 0);
 }
 
 void gunner_sight (edict_t *self, edict_t *other)
 {
-	gi.sound (self, CHAN_VOICE, sound_sight, 1, ATTN_NORM, 0);
+	//gi.sound (self, CHAN_VOICE, sound_sight, 1, ATTN_NORM, 0);
 }
 
 void gunner_search (edict_t *self)
 {
-	gi.sound (self, CHAN_VOICE, sound_search, 1, ATTN_NORM, 0);
+	//gi.sound (self, CHAN_VOICE, sound_search, 1, ATTN_NORM, 0);
 }
 
 
@@ -217,6 +217,7 @@ void gunner_run (edict_t *self)
 		self->monsterinfo.currentmove = &gunner_move_run;
 }
 
+/**
 mframe_t gunner_frames_runandshoot [] =
 {
 	ai_run, 32, NULL,
@@ -227,12 +228,12 @@ mframe_t gunner_frames_runandshoot [] =
 	ai_run, 20, NULL
 };
 
-mmove_t gunner_move_runandshoot = {FRAME_runs01, FRAME_runs06, gunner_frames_runandshoot, NULL};
+mmove_t gunner_move_runandshoot = {FRAME_runs01, FRAME_runs06, gunner_frames_runandshoot, NULL}; 
 
 void gunner_runandshoot (edict_t *self)
 {
 	self->monsterinfo.currentmove = &gunner_move_runandshoot;
-}
+} */
 
 mframe_t gunner_frames_pain3 [] =
 {
@@ -424,7 +425,7 @@ void gunner_opengun (edict_t *self)
 }
 
 void GunnerFire (edict_t *self)
-{
+{ /**
 	vec3_t	start;
 	vec3_t	forward, right;
 	vec3_t	target;
@@ -443,7 +444,7 @@ void GunnerFire (edict_t *self)
 
 	VectorSubtract (target, start, aim);
 	VectorNormalize (aim);
-	monster_fire_bullet (self, start, aim, 3, 4, DEFAULT_BULLET_HSPREAD, DEFAULT_BULLET_VSPREAD, flash_number);
+	monster_fire_bullet (self, start, aim, 3, 4, DEFAULT_BULLET_HSPREAD, DEFAULT_BULLET_VSPREAD, flash_number); */
 }
 
 void GunnerGrenade (edict_t *self)
@@ -470,19 +471,19 @@ void GunnerGrenade (edict_t *self)
 
 	monster_fire_grenade (self, start, aim, 50, 600, flash_number);
 }
-
+/*
 mframe_t gunner_frames_attack_chain [] =
 {
-	/*
-	ai_charge, 0, NULL,
-	ai_charge, 0, NULL,
-	ai_charge, 0, NULL,
-	ai_charge, 0, NULL,
-	ai_charge, 0, NULL,
-	ai_charge, 0, NULL,
-	ai_charge, 0, NULL,
-	ai_charge, 0, NULL,
-	*/
+	 
+	//ai_charge, 0, NULL,
+	//ai_charge, 0, NULL,
+	//ai_charge, 0, NULL,
+	//ai_charge, 0, NULL,
+	//ai_charge, 0, NULL,
+	//ai_charge, 0, NULL,
+	//ai_charge, 0, NULL,
+	//ai_charge, 0, NULL,
+	 
 	ai_charge, 0, gunner_opengun,
 	ai_charge, 0, NULL,
 	ai_charge, 0, NULL,
@@ -542,11 +543,11 @@ mframe_t gunner_frames_attack_grenade [] =
 	ai_charge, 0, NULL,
 	ai_charge, 0, NULL
 };
-mmove_t gunner_move_attack_grenade = {FRAME_attak101, FRAME_attak121, gunner_frames_attack_grenade, gunner_run};
+mmove_t gunner_move_attack_grenade = {FRAME_attak101, FRAME_attak121, gunner_frames_attack_grenade, gunner_run}; */
 
 void gunner_attack(edict_t *self)
 {
-	if (range (self, self->enemy) == RANGE_MELEE)
+    /*if (range (self, self->enemy) == RANGE_MELEE)
 	{
 		self->monsterinfo.currentmove = &gunner_move_attack_chain;
 	}
@@ -556,24 +557,24 @@ void gunner_attack(edict_t *self)
 			self->monsterinfo.currentmove = &gunner_move_attack_grenade;
 		else
 			self->monsterinfo.currentmove = &gunner_move_attack_chain;
-	}
+	} */
 }
 
 void gunner_fire_chain(edict_t *self)
 {
-	self->monsterinfo.currentmove = &gunner_move_fire_chain;
+	//self->monsterinfo.currentmove = &gunner_move_fire_chain;
 }
 
 void gunner_refire_chain(edict_t *self)
 {
-	if (self->enemy->health > 0)
+	/* if (self->enemy->health > 0)
 		if ( visible (self, self->enemy) )
 			if (random() <= 0.5)
 			{
 				self->monsterinfo.currentmove = &gunner_move_fire_chain;
 				return;
 			}
-	self->monsterinfo.currentmove = &gunner_move_endfire_chain;
+	self->monsterinfo.currentmove = &gunner_move_endfire_chain; */
 }
 
 /*QUAKED monster_gunner (1 .5 0) (-16 -16 -24) (16 16 32) Ambush Trigger_Spawn Sight
@@ -613,11 +614,11 @@ void SP_monster_gunner (edict_t *self)
 	self->monsterinfo.stand = gunner_stand;
 	self->monsterinfo.walk = gunner_walk;
 	self->monsterinfo.run = gunner_run;
-	self->monsterinfo.dodge = gunner_dodge;
-	self->monsterinfo.attack = gunner_attack;
-	self->monsterinfo.melee = NULL;
-	self->monsterinfo.sight = gunner_sight;
-	self->monsterinfo.search = gunner_search;
+	//self->monsterinfo.dodge = gunner_dodge;
+	//self->monsterinfo.attack = gunner_attack;
+	//self->monsterinfo.melee = NULL;
+	//self->monsterinfo.sight = gunner_sight;
+	//self->monsterinfo.search = gunner_search;
 
 	gi.linkentity (self);
 

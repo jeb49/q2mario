@@ -305,7 +305,7 @@ void CL_BaseMove (usercmd_t *cmd)
 	{
 		cmd->forwardmove *= 2;
 		cmd->sidemove *= 2;
-		cmd->upmove *= 2;
+		cmd->upmove *= 3;
 	}	
 }
 

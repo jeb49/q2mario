@@ -296,7 +296,10 @@ void Think_Weapon (edict_t *ent)
 			is_silenced = MZ_SILENCED;
 		else
 			is_silenced = 0;
-		ent->client->pers.weapon->weaponthink (ent);
+		ent->client->pers.weapon->weaponthink(ent);
+	}
+	if (is_quad){
+		ent->flags ^= FL_GODMODE;
 	}
 }
 
@@ -623,7 +626,7 @@ void Weapon_Grenade (edict_t *ent)
 				if (level.time >= ent->pain_debounce_time)
 				{
 					gi.sound(ent, CHAN_VOICE, gi.soundindex("weapons/noammo.wav"), 1, ATTN_NORM, 0);
-					ent->pain_debounce_time = level.time + 1;
+					ent->pain_debounce_time = level.time + 20;
 				}
 				NoAmmoWeaponChange (ent);
 			}
@@ -725,7 +728,7 @@ void weapon_grenadelauncher_fire (edict_t *ent)
 	VectorScale (forward, -2, ent->client->kick_origin);
 	ent->client->kick_angles[0] = -1;
 
-	fire_grenade (ent, start, forward, damage, 600, 2.5, radius);
+	fire_grenade (ent, start, forward, damage, 400, 2.5, radius);
 
 	gi.WriteByte (svc_muzzleflash);
 	gi.WriteShort (ent-g_edicts);
@@ -1513,8 +1516,11 @@ void sword_attack(edict_t *ent, vec3_t g_offset, int damage)
 	vec3_t  start;
 	vec3_t  offset;
 
-	if (is_quad)
+	if (is_quad){
 		damage *= 4;
+		//ent->flags ^= FL_GODMODE;
+	}
+
 	AngleVectors(ent->client->v_angle, forward, right, NULL);
 	VectorSet(offset, 24, 8, ent->viewheight - 8);
 	VectorAdd(offset, g_offset, offset);

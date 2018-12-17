@@ -84,6 +84,7 @@
     <OutDir>.\..\release\</OutDir>
     <IntDir>.\release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>gamex86</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Alpha|Win32'">
     <OutDir>.\..\ReleaseAXP\</OutDir>

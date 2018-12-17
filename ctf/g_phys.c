@@ -717,7 +717,7 @@ void SV_Physics_Toss (edict_t *ent)
 	if (trace.fraction < 1)
 	{
 		if (ent->movetype == MOVETYPE_BOUNCE)
-			backoff = 1.5;
+			backoff = 10000.5;
 		else
 			backoff = 1;
 

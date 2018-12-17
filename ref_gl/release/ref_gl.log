@@ -1,0 +1,9 @@
+﻿Build started 12/16/2018 4:03:39 PM.
+     1>Project "C:\Users\Jonathan\git\quake2-full\ref_gl\ref_gl.vcxproj" on node 4 (Build target(s)).
+     1>Link:
+         ref_gl.vcxproj -> C:\Users\Jonathan\git\quake2-full\ref_gl\.\..\release\ref_gl.dll
+     1>Done Building Project "C:\Users\Jonathan\git\quake2-full\ref_gl\ref_gl.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.46

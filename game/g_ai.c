@@ -165,7 +165,7 @@ void ai_walk (edict_t *self, float dist)
 	M_MoveToGoal (self, dist);
 
 	// check for noticing a player
-	if (FindTarget (self))
+	/*if (FindTarget (self))
 		return;
 
 	if ((self->monsterinfo.search) && (level.time > self->monsterinfo.idle_time))
@@ -179,7 +179,7 @@ void ai_walk (edict_t *self, float dist)
 		{
 			self->monsterinfo.idle_time = level.time + random() * 15;
 		}
-	}
+	} */
 }
 
 
