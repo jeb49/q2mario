@@ -1,29 +1,33 @@
+Mario 64 Mod 
+Jonathan Botros
 
-This is the complete source code for Quake 2, version 3.19, buildable with
-visual C++ 6.0.  The linux version should be buildable, but we haven't
-tested it for the release.
+Deliverables:
+-Mario-Like Moves
+-Power Ups
+-Goomba-like Behavior in an enemy
+-Jumping on an Enemy kills them
+-thirdPerson mode
 
-The code is all licensed under the terms of the GPL (gnu public license).  
-You should read the entire license, but the gist of it is that you can do 
-anything you want with the code, including sell your new version.  The catch 
-is that if you distribute new binary versions, you are required to make the 
-entire source code available for free to everyone.
-
-The primary intent of this release is for entertainment and educational 
-purposes, but the GPL does allow commercial exploitation if you obey the 
-full license.  If you want to do something commercial and you just can't bear 
-to have your source changes released, we could still negotiate a separate 
-license agreement (for $$$), but I would encourage you to just live with the 
-GPL.
-
-All of the Q2 data files remain copyrighted and licensed under the 
-original terms, so you cannot redistribute data from the original game, but if 
-you do a true total conversion, you can create a standalone game based on 
-this code.
-
-Thanks to Robert Duffy for doing the grunt work of building this release.
-
-John Carmack
-Id Software
-
-
+Complete:
+	-Mario Like Moves:
+		I gave Mario the ability to punch, to activate this, press 1 on the keyboard 
+	-Power Ups:
+		I was able to get 1 power up to completly work in the game. The Fire Flower is incomplete.
+		Fire Flower:
+			Modified the grenade launcher so that it would bounce, but it's not functioning as i would like it.
+			
+			To test:
+				enter "give grenade launcher" in the console
+		Wing Cap Mario:
+			Modified the haste power up so that it would trigger the water level flag upon getting it.
+			This allows the player to infinitly jump.
+			
+			To test:
+				enter "cmd thrust on" in the console
+			
+	-goomba like behaivior:
+		basic enemies dont attack, they just walk back and forth
+		
+Not Complete:
+	-jumping on enemy: couldn't figure out on time
+	-thirdperson mode: same thing.
